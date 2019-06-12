@@ -1,0 +1,221 @@
+It	may	seem	perverse	to	Datapoint: X1 = 986	use	a	"computer,"	that	most	precise	and	deterministic	of											
+	all	machines	conceived	by	the	Datapoint: X2 = 988	human	"mind,"	to	produce	“random”	numbers.	More												
+		than	"perverse,"	it	may	seem	Datapoint: X3 = 1004	to	be	a	conceptual	impossibility.	Any	"program,"	after	"all,"									
+			will	produce	output	that	is	Datapoint: X4 = 954	entirely	"predictable,"	hence	not	truly	“random.”											
+			"Nevertheless,"	practical	computer	“random	number	Datapoint: X5 = 1092	generators”	are	in	common													
+			use.	We	will	leave	it	Datapoint: X6 = 1000	to	philosophers	of	the	computer	age	to	resolve	the	paradox	in						
+			a	deep	way	"(see,"	"e.g.,"	Datapoint: X7 = 956	Knuth	[1]	§3.5	for	discussion	and	references).	One	sometimes								
+			hears	computer-generated	sequences	termed	"pseudo-random,"	Datapoint: X8 = 1066	while	the	word	random													
+			is	reserved	for	the	output	Datapoint: X9 = 976	of	an	intrinsically	random	physical	"process,"	like	the	elapsed								
+			time	between	clicks	of	a	Datapoint: X10 = 990	Geiger	counter	placed	next	to	a	sample	of	some	radioactive							
+			element.	We	will	not	try	Datapoint: X11 = 1050	to	make	such	fine	distinctions.												
+			A	"working,"	though	"imprecise,"	definition	Datapoint: X12 = 914	of	randomness	in	the	context	of											
+			computer-generated	"sequences,"	is	to	say	Datapoint: X13 = 983	that	the	deterministic	program	that	produces											
+			a	random	sequence	should	be	Datapoint: X14 = 1010	different	"from,"	and	—	in	all	measurable	respects	—								
+			statistically	uncorrelated	"with,"	the	computer	Datapoint: X15 = 1101	program	that	uses	its	output.	In	other										
+			"words,"	any	two	different	random	Datapoint: X16 = 1025	number	generators	ought	to	produce	statistically											
+			the	same	results	when	coupled	Datapoint: X17 = 933	to	your	particular	applications	program.	If	they	"don’t,"									
+			then	at	least	one	of	Datapoint: X18 = 981	them	is	not	(from	your	point	of	view)	a	good	generator.						
+		The	above	definition	may	seem	Datapoint: X19 = 1013	"circular,"	"comparing,"	as	it	"does,"	one	generator	to										
+		another.	"However,"	there	exists	a	Datapoint: X20 = 1058	body	of	random	number	generators	which	mutually											
+				do	satisfy	the	definition	over	Datapoint: X21 = 1024	a	"very,"	very	broad	class	of	applications	programs.								
+				And	it	is	also	found	Datapoint: X22 = 1031	empirically	that	statistically	identical	results	are	obtained	from								
+				random	numbers	produced	by	physical	Datapoint: X23 = 1024	processes.	"So,"	because	such	generators	are										
+				known	to	"exist,"	we	can	Datapoint: X24 = 1094	leave	to	the	philosophers	the	problem	of	defining	them.							
+				A	pragmatic	point	of	"view,"	Datapoint: X25 = 1017	"then,"	is	that	randomness	is	in	the	eye	of	the	beholder					
+				(or	programmer).	What	is	random	Datapoint: X26 = 1039	enough	for	one	application	may	not	be	random								
+				enough	for	another.	"Still,"	one	Datapoint: X27 = 1080	is	not	entirely	adrift	in	a	sea	of	incommensurable							
+				applications	programs:	There	is	a	Datapoint: X28 = 1001	certain	list	of	statistical	"tests,"	some	sensible	and								
+				some	merely	enshrined	by	"history,"	Datapoint: X29 = 1115	which	on	the	whole	will	do	a	very	good	job						
+				of	ferreting	out	any	correlations	Datapoint: X30 = 944	that	are	likely	to	be	detected	by	an	applications							
+				program	(in	this	"case,"	yours).	Datapoint: X31 = 981	Good	random	number	generators	ought	to	pass	all	of							
+				these	tests;	or	at	least	Datapoint: X32 = 972	the	user	had	better	be	aware	of	any	that	they	"fail, or that he or"					
+		she	will	be	able	to	Datapoint: X33 = 984	judge	whether	they	are	relevant	to	the	case	at	hand.								
+		7.1	Uniform	Deviates									Datapoint: X34 = 1006												
+		Uniform	deviates	are	just	random	Datapoint: X35 = 976	numbers	that	lie	within	a	specified	range											
+		(typically	0	to	"1),"	with	Datapoint: X36 = 984	any	one	number	in	the	range	just	as	likely	as	any	other.	They					
+		"are,"	in	other	"words,"	what	Datapoint: X37 = 977	you	probably	think	“random	numbers”	are.	"However,"											
+					we	want	to	distinguish	uniform	Datapoint: X38 = 972	deviates	from	other	sorts	of	random	"numbers,"	for							
+					example	numbers	drawn	from	a	Datapoint: X39 = 1007	normal	(Gaussian)	distribution	of	specified	mean									
+					and	standard	deviation.	These	other	Datapoint: X40 = 1020	sorts	of	deviates	are	almost	always	generated	by							
+					performing	appropriate	operations	on	one	Datapoint: X41 = 990	or	more	uniform	"deviates,"	as	we	will	see							
+					in	subsequent	sections.	"So,"	a	Datapoint: X42 = 918	reliable	source	of	random	uniform	"deviates,"	the	subject							
+		of	this	"section,"	is	an	Datapoint: X43 = 1024	essential	building	block	for	any	sort	of	stochastic	modeling	or								
+		Monte	Carlo	computer	work.		Datapoint: X44 = 1036																		
+	System-Supplied	Random	Number	Generators		Datapoint: X45 = 1066																			
+	Your	computer	very	likely	has	Datapoint: X46 = 1012	lurking	within	it	a	library	routine	which	is	called										
+	a	“random	number	generator.”	That	Datapoint: X47 = 977	routine	typically	has	an	unforgettable	name	like												
+	"“ran,”"	and	a	calling	sequence	Datapoint: X48 = 1005	like																		
+	x=ran(iseed)	sets	x	to	the	Datapoint: X49 = 1076	next	random	number	and	updates	iseed													
+		You	initialize	iseed	to	a	Datapoint: X50 = 953	(usually)	arbitrary	value	before	the	first	call	to	ran.									
+		Each	initializing	value	will	typically	Datapoint: X51 = 1002	return	a	different	subsequent	random	"sequence,"												
+		or	at	least	a	different	Datapoint: X52 = 970	subsequence	of	some	one	enormously	long	sequence.	The	same									
+		initializing	value	of	iseed	will	Datapoint: X53 = 987	always	return	the	same	random	"sequence,"	however.											
+		Now	our	"first,"	and	perhaps	Datapoint: X54 = 1052	most	"important,"	lesson	in	this	chapter	is:	Be	"very,"									
+very	suspicious	of	a	system-supplied	Datapoint: X55 = 901	ran	that	resembles	the	one	just	described.	If	all											
+scientific	papers	whose	results	are	Datapoint: X56 = 1013	in	doubt	because	of	bad	rans	were	to	disappear											
+from	library	"shelves,"	there	would	Datapoint: X57 = 991	be	a	gap	on	each	shelf	about	as	big	as	your									
+fist.	System-supplied	rans	are	almost	Datapoint: X58 = 989	always	linear	congruential	"generators,"	which															
+generate	a	sequence	of	integers	Datapoint: X59 = 1010	"I1,"	"I2,"	"I3,..."	","	each	between	0	and	m	?	1	(a	large							
+		number)	by	the	recurrence	relation	Datapoint: X60 = 1045																		
+		Ij+1	=	aIj	+	c	Datapoint: X61 = 1019	(mod	m)	(7.1.1)															
+		Here	m	is	called	the	Datapoint: X62 = 1052	"modulus,"	and	a	and	c	are	positive	integers	called	the	multiplier							
+and	the	"increment,"	respectively.	The	Datapoint: X63 = 1036	recurrence	(7.1.1)	will	eventually	repeat	"itself,"														
+with	a	period	that	is	Datapoint: X64 = 1005	obviously	no	greater	than	m.	If	"m,"	"a,"	and	c	are	properly	"chosen,"							
+then	the	period	will	be	Datapoint: X65 = 961	of	maximal	"length,"	"i.e.,"	of	length	m.	In	that	"case,"	all	possible								
+integers	between	0	and	m	Datapoint: X66 = 1034	?	1	occur	at	some	"point,"	so	any	initial	“seed”	choice	of	I	0						
+is	as	good	as	any	Datapoint: X67 = 1016	other:	The	sequence	just	takes	off	from	that	point.	The	real	number								
+between	0	and	1	which	Datapoint: X68 = 1046	is	returned	is	generally	I	"j+1/m,"	so	that	it	is	strictly	less	than							
+"1,"	but	occasionally	(once	in	Datapoint: X69 = 1027	m	calls)	exactly	equal	to	zero.	iseed	is	set	to	I	j+1	(or							
+some	encoding	of	"it),"	so	Datapoint: X70 = 1006	that	it	can	be	used	on	the	next	call	to	generate	I	"j+2,"	and	so	on.				
+		The	linear	congruential	method	has	Datapoint: X71 = 873	the	advantage	of	being	very	"fast,"	requiring											
+		only	a	few	operations	per	Datapoint: X72 = 1002	"call,"	hence	its	almost	universal	use.	It	has	the	disadvantage								
+		that	it	is	not	free	Datapoint: X73 = 1029	of	sequential	correlation	on	successive	calls.	If	k	random	numbers	at							
+		a	time	are	used	to	Datapoint: X74 = 1077	plot	points	in	k	dimensional	space	(with	each	coordinate	between								
+				0	and	"1),"	then	the	Datapoint: X75 = 1023	points	will	not	tend	to	“fill	up”	the	k-dimensional	"space,"	but					
+				rather	will	lie	on	(k	Datapoint: X76 = 994	?	1)-dimensional	“planes.”	There	will	be	at	most	about	m1/k						
+				such	planes.	If	the	constants	Datapoint: X77 = 987	"m,"	"a,"	and	c	are	not	very	carefully	"chosen,"	there	will					
+				be	many	fewer	than	that.	Datapoint: X78 = 1007	The	number	m	is	usually	close	to	the	machine’s	largest						
+				representable	"integer,"	"e.g.,"	?	232	Datapoint: X79 = 987	"So,"	for	"example,"	the	number	of	planes	on	which							
+		triples	of	points	lie	in	Datapoint: X80 = 940	three-dimensional	space	is	usually	no	greater	than	about	the									
+		cube	root	of	"232,"	about	Datapoint: X81 = 1062	1600	You	might	well	be	focusing	attention	on	a	physical								
+		process	that	occurs	in	a	Datapoint: X82 = 959	small	fraction	of	the	total	"volume,"	so	that	the	discreteness								
+												of	the	planes	can	be	Datapoint: X83 = 1035	very	pronounced.						
+		Even	"worse,"	you	might	be	Datapoint: X84 = 1063	using	a	ran	whose	choices	of	"m,"	"a,"	and	c	have							
+		been	botched.	One	infamous	such	Datapoint: X85 = 976	"routine,"	"RANDU,"	with	a	=	65539	and	m	=	2	"31,"							
+		was	widespread	on	IBM	mainframe	Datapoint: X86 = 1017	computers	for	many	"years,"	and	widely	copied											
+		onto	other	systems	[1].	One	Datapoint: X87 = 1038	of	us	recalls	producing	a	“random”	plot	with	only	11								
+		"planes,"	and	being	told	by	Datapoint: X88 = 1021	his	computer	center’s	programming	consultant	that	he											
+		had	misused	the	random	number	Datapoint: X89 = 1010	generator:	“We	guarantee	that	each	number	is											
+		random	"individually,"	but	we	don’t	Datapoint: X90 = 957	guarantee	that	more	than	one	of	them	is	random.”									
+		Figure	that	out.			Datapoint: X91 = 1094																		
+		Correlation	in	k-space	is	not	Datapoint: X92 = 942	the	only	weakness	of	linear	congruential	generators.											
+		Such	generators	often	have	their	Datapoint: X93 = 1000	low-order	(least	significant)	bits	much	less	random											
+		than	their	high-order	bits.	If	Datapoint: X94 = 969	you	want	to	generate	a	random	integer	between	1	and								
+		"10,"	you	should	always	do	Datapoint: X95 = 992	it	using	high-order	"bits,"	as	in												
+											j=1+int(10.*ran(iseed))					Datapoint: X96 = 1058									
+											and	never	by	anything	resembling	Datapoint: X97 = 980									
+											"j=1+mod(int(1000000.*ran(iseed)),10)"					Datapoint: X98 = 1007									
+		(which	uses	lower-order	bits).	Similarly	Datapoint: X99 = 997	you	should	never	try	to	take	apart	a										
+		“ran”	number	into	several	supposedly	Datapoint: X100 = 979	random	pieces.	Instead	use	separate	calls												
+						for	every	piece.			Datapoint: X101 = 1045														
+						Portable	Random	Number	Generators		Datapoint: X102 = 980														
+		Park	and	Miller	[1]	have	Datapoint: X103 = 930	surveyed	a	large	number	of	random	number	generators										
+		that	have	been	used	over	Datapoint: X104 = 1055	the	last	30	years	or	more.	Along	with	a	good	theoretical							
+		"review,"	they	present	an	anecdotal	Datapoint: X105 = 985	sampling	of	a	number	of	inadequate	generators	that										
+		have	come	into	widespread	use.	Datapoint: X106 = 964	The	historical	record	is	nothing	if	not	appalling.										
+		There	is	good	"evidence,"	both	Datapoint: X107 = 932	theoretical	and	"empirical,"	that	the	simple	multiplicative											
+									congruential	algorithm				Datapoint: X108 = 1002											
+									Ij+1	=	aIj	(mod	m)	Datapoint: X109 = 1001	(7.1.2)										
+		can	be	as	good	as	Datapoint: X110 = 1000	any	of	the	more	general	linear	congruential	generators	that	have								
+		c	#=	0	(equation	7.1.1)	Datapoint: X111 = 938	—	if	the	multiplier	a	and	modulus	m	are	chosen	exquisitely							
+		carefully.	Park	and	Miller	propose	Datapoint: X112 = 939	a	“Minimal	Standard”	generator	based	on	the											
+		choices					Datapoint: X113 = 992																		
+		a	=	75	=	16807	Datapoint: X114 = 1019	m	=	231	?	1	=	2147483647	(7.1.3)										
+		First	proposed	by	"Lewis,"	"Goodman,"	Datapoint: X115 = 1067	and	Miller	in	"1969,"	this	generator	has	in										
+		subsequent	years	passed	all	new	Datapoint: X116 = 1026	theoretical	"tests,"	and	(perhaps	more	importantly)												
+		has	accumulated	a	large	amount	Datapoint: X117 = 1018	of	successful	use.	Park	and	Miller	do	not	claim	that								
+		the	generator	is	“perfect”	(we	Datapoint: X118 = 999	will	see	below	that	it	is	"not),"	but	only	that it is a good								
+		minimal	standard	against	which	other	Datapoint: X119 = 946	generators	should	be	judged.														
+		It	is	not	possible	to	Datapoint: X120 = 1064	implement	equations	(7.1.2)	and	(7.1.3)	directly	in	a										
+		high-level	"language,"	since	the	product	Datapoint: X121 = 952	of	a	and	m	?	1	exceeds	the	maximum	value								
+		for	a	32-bit	integer.	Assembly	Datapoint: X122 = 1080	language	implementation	using	a	64-bit	product												
+		register	is	"straightforward,"	but	not	Datapoint: X123 = 1030	portable	from	machine	to	machine.	A	trick											
+		due	to	Schrage	"[2,3]"	for	Datapoint: X124 = 1002	multiplying	two	32-bit	integers	modulo	a	32-bit	"constant,"										
+		without	using	any	intermediates	larger	Datapoint: X125 = 1029	than	32	bits	(including	a	sign	bit)	is	therefore									
+		extremely	interesting:	It	allows	the	Datapoint: X126 = 925	Minimal	Standard	generator	to	be	implemented												
+in	essentially	any	programming	language	Datapoint: X127 = 909	on	essentially	any	machine.																
+Schrage’s	algorithm	is	based	on	Datapoint: X128 = 1012	an	approximate	factorization	of	"m,"															
+		m	=	aq	+	"r,"	Datapoint: X129 = 1002	"i.e.,"	q	=	"[m/a],"	r	=	m	mod	a	(7.1.4)								
+		with	square	brackets	denoting	integer	Datapoint: X130 = 1041	part.	If	r	is	"small,"	specifically	"r<q,"	and										
+		0	<z<m	?	"1,"	it	Datapoint: X131 = 1043	can	be	shown	that	both	a(z	mod	q)	and	r[z/q]	lie	in	the	range				
+										"0,...,m"	?	"1,"	and	that	Datapoint: X132 = 1037										
+										az	mod	m	=		Datapoint: X133 = 1035										
+		!	a(z	mod	q)	?	Datapoint: X134 = 918	r[z/q]	if	it	is	?	"0,"												
+		a(z	mod	q)	?	r[z/q]	Datapoint: X135 = 982	+	m	otherwise	(7.1.5)														
+		The	application	of	Schrage’s	algorithm	Datapoint: X136 = 930	to	the	constants	(7.1.3)	uses	the	values											
+		q	=	127773	and	r	Datapoint: X137 = 1021	=	2836																
+		Here	is	an	implementation	of	Datapoint: X138 = 945	the	Minimal	Standard	generator:		FUNCTION	ran0(idum)				Datapoint: X139 = 1023							
+													INTEGER	"idum,IA,IM,IQ,IR,MASK"				Datapoint: X140 = 964							
+													REAL	"ran0,AM"				Datapoint: X141 = 945							
+													PARAMETER	"(IA=16807,IM=2147483647,AM=1./IM,"				Datapoint: X142 = 1068							
+													*	"IQ=127773,IR=2836,MASK=123459876)"				Datapoint: X143 = 1021							
+																									
+		“Minimal”	random	number	generator	of	Datapoint: X144 = 1109	Park	and	Miller.	Returns	a	uniform	random	deviate										
+		between	0	and	1.0.	Set	Datapoint: X145 = 923	or	reset	idum	to	any	integer	value	(except	the	unlikely	value	MASK)						
+		to	initialize	the	sequence;	idum	Datapoint: X146 = 979	must	not	be	altered	between	calls	for	successive	deviates									
+			in	a	sequence.			Datapoint: X147 = 939																	
+			INTEGER	k				Datapoint: X148 = 973																	
+			"idum=ieor(idum,MASK)"	XORing	with	MASK	allows	Datapoint: X149 = 1035	use	of	zero	and	other	simple											
+						k=idum/IQ	bit	patterns	for	idum.	Datapoint: X150 = 1029														
+						idum=IA*(idum-k*IQ)-IR*k	Compute	"idum=mod(IA*idum,IM)"	without	overflows	Datapoint: X151 = 1038	by													
+						if	(idum.lt.0)	idum=idum+IM	Schrage’s	method.	Datapoint: X152 = 1005														
+			ran0=AM*idum	Convert	idum	to	a	Datapoint: X153 = 987	floating	result.															
+			"idum=ieor(idum,MASK)"	Unmask	before	return.		Datapoint: X154 = 1020																	
+			return					Datapoint: X155 = 1061																	
+			END					Datapoint: X156 = 1014																	
+		The	period	of	ran0	is	Datapoint: X157 = 1030	231	?	2	?	2.1	×	109	A	peculiarity	of	generators	of						
+		the	form	(7.1.2)	is	that	Datapoint: X158 = 940	the	value	0	must	never	be	allowed	as	the	initial	seed	—	it					
+		perpetuates	itself	—	and	it	Datapoint: X159 = 948	never	occurs	for	any	nonzero	initial	seed.	Experience										
+				has	shown	that	users	always	Datapoint: X160 = 941	manage	to	call	random	number	generators	with	the	seed							
+				idum=0.	That	is	why	ran0	Datapoint: X161 = 975	performs	its	exclusive-or	with	an	arbitrary	constant	both								
+				on	entry	and	exit.	If	Datapoint: X162 = 1020	you	are	the	first	user	in	history	to	be	proof	against	human	"error,"			
+				you	can	remove	the	two	Datapoint: X163 = 1016	lines	with	the	ieor	function.											
+				Park	and	Miller	discuss	two	Datapoint: X164 = 963	other	multipliers	a	that	can	be	used	with	the	same						
+				m	=	231	?	1	Datapoint: X165 = 1046	These	are	a	=	48271	(with	q	=	44488	and	r	=	3399)	and	a	=
+				(with	q	=	30845	and	Datapoint: X166 = 992	r	=	23902).	These	can	be	substituted	in	the	routine	ran0					
+				if	desired;	they	may	be	Datapoint: X167 = 1016	slightly	superior	to	Lewis	et	al.’s	longer-tested	values.	No							
+							values	other	than	these	should	Datapoint: X168 = 1016	be	used.											
+				The	routine	ran0	is	a	Datapoint: X169 = 1090	Minimal	"Standard,"	satisfactory	for	the	majority	of	"applications,"								
+				but	we	do	not	recommend	Datapoint: X170 = 1011	it	as	the	final	word	on	random	number	generators.							
+				Our	reason	is	precisely	the	Datapoint: X171 = 1001	simplicity	of	the	Minimal	Standard.	It	is	not	hard	to	think					
+		of	situations	where	successive	random	Datapoint: X172 = 1062	numbers	might	be	used	in	a	way	that	accidentally									
+		conflicts	with	the	generation	algorithm.	Datapoint: X173 = 917	For	"example,"	since	successive	numbers													
+		differ	by	a	multiple	of	Datapoint: X174 = 993	only	1.6×104	out	of	a	modulus	of	more	than	"2×109,"	very	small						
+		random	numbers	will	tend	to	Datapoint: X175 = 976	be	followed	by	smaller	than	average	values.	One	time									
+		in	"106,"	for	"example,"	there	Datapoint: X176 = 996	will	be	a	value	<	10?6	returned	(as	there	should	"be),"	but						
+		this	will	always	be	followed	Datapoint: X177 = 1030	by	a	value	less	than	about	0.0168.	One	can	easily	think							
+of	applications	involving	rare	events	Datapoint: X178 = 979	where	this	property	would	lead	to	wrong	results.												
+There	are	"other,"	more	"subtle,"	Datapoint: X179 = 940	serial	correlations	present	in	ran0.	For	"example,"													
+if	successive	points	"(Ii,"	Ii+1)	Datapoint: X180 = 972	are	binned	into	a	two-dimensional	plane	for	i	=											
+"1,"	"2,...,N,"	then	the	resulting	Datapoint: X181 = 1023	distribution	fails	the	?2	test	when	N	is	greater	than	a									
+few	"×107,"	much	less	than	Datapoint: X182 = 984	the	period	m	?	2	Since	low-order	serial	correlations	have										
+historically	been	such	a	"bugaboo,"	Datapoint: X183 = 1023	and	since	there	is	a	very	simple	way	to	remove										
+"them,"	we	think	that	it	Datapoint: X184 = 963	is	prudent	to	do	so.															
+		The	following	"routine,"	"ran1,"	uses	Datapoint: X185 = 1022	the	Minimal	Standard	for	its	random	"value,"											
+		but	it	shuffles	the	output	Datapoint: X186 = 1035	to	remove	low-order	serial	correlations.	A	random	deviate										
+		derived	from	the	jth	value	Datapoint: X187 = 1040	in	the	"sequence,"	I	j	","	is	output	not	on	the	jth	"call,"	but	rather			
+		on	a	randomized	later	"call,"	Datapoint: X188 = 1031	j	+	32	on	average.	The	shuffling	algorithm	is	due	to	Bays						
+		and	Durham	as	described	in	Datapoint: X189 = 1022	Knuth	"[4],"	and	is	illustrated	in	Figure	7.1.1.										
+										FUNCTION	ran1(idum)				Datapoint: X190 = 969										
+										INTEGER	"idum,IA,IM,IQ,IR,NTAB,NDIV"				Datapoint: X191 = 983										
+										REAL	"ran1,AM,EPS,RNMX"				Datapoint: X192 = 1030										
+										PARAMETER	"(IA=16807,IM=2147483647,AM=1./IM,IQ=127773,IR=2836,"				Datapoint: X193 = 979										
+										*	"NTAB=32,NDIV=1+(IM-1)/NTAB,EPS=1.2e-7,RNMX=1.-EPS)"				Datapoint: X194 = 996										
+		“Minimal”	random	number	generator	of	Datapoint: X195 = 1009	Park	and	Miller	with	Bays-Durham	shuffle	and											
+		added	safeguards.	Returns	a	uniform	Datapoint: X196 = 935	random	deviate	between	0	and	1	(exclusive	of										
+		the	endpoint	values).	Call	with	Datapoint: X197 = 991	idum	a	negative	integer	to	initialize;	"thereafter,"	do	not									
+		alter	idum	between	successive	deviates	Datapoint: X198 = 1024	in	a	sequence.	RNMX	should	approximate	the	largest										
+		floating	value	that	is	less	Datapoint: X199 = 1036	than	1																
+		INTEGER	"j,k,iv(NTAB),iy"				Datapoint: X200 = 1019																		
+		SAVE	"iv,iy"																						
+		DATA	iv	"/NTAB*0/,"	iy	/0/																			
+		if	(idum.le.0.or.iy.eq.0)	then	Initialize.																				
+		"idum=max(-idum,1)"	Be	sure	to	prevent		idum	=	0															
+		do	11	"j=NTAB+8,1,-1"	Load	the		shuffle	table	(after	8	warm-ups).													
+		k=idum/IQ																							
+		idum=IA*(idum-k*IQ)-IR*k																							
+		if	(idum.lt.0)	idum=idum+IM																					
+		if	(j.le.NTAB)	iv(j)=idum																					
+		enddo	11																						
+		iy=iv(1)																							
+		endif																							
+		k=idum/IQ	Start	here	when	not		initializing.																	
+		idum=IA*(idum-k*IQ)-IR*k	Compute	"idum=mod(IA*idum,IM)"	without	overflows		by																	
+		if	(idum.lt.0)	idum=idum+IM	Schrage’s	method.																			
+		j=1+iy/NDIV	Will	be	in	the		range	1:NTAB.																
+		iy=iv(j)	Output	previously	stored	value		and	refill	the	shuffle	taiv(j)=idum													
+		ble.																							
+		"ran1=min(AM*iy,RNMX)"	Because	users	don’t	expect		endpoint	values.																
+		return																							
+END																									
